@@ -1,0 +1,16 @@
+curl -F 'client_id=ddf1a5027287484d94446a9fc68dcb47' \
+    -F 'client_secret=80172c8e64f040a7b38526c829564515' \
+    -F 'grant_type=authorization_code' \
+    -F 'redirect_uri=http://localhost:3000/' \
+    -F 'code=' \
+    https://api.instagram.com/oauth/access_token
+
+
+
+<% grams.forEach(function(gram) {%>
+  <div>
+    <a href="<%= gram.link %>">
+      <img src="<%= gram.images.standard_resolution.url %>">
+    </a>
+  </div>
+<%})%>

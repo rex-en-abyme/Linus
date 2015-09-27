@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>rex</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <link rel='stylesheet' href='../bower_components/bootstrap/dist/css/bootstrap.min.css' />
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/d3/d3.min.js"></script>
+</head>
+<body>
+<div id="piclist" class="col-md-2">
+  <ul class="nav nav-pills">
+    <% for(var id in instagramsObj) { %>
+    <li>
+      <div>
+        <img class="img-circle"
+             id="<%= id %>"
+             src="<%= instagramsObj[id].images.thumbnail.url %>"
+             alt="<%= instagramsObj[id].images.standard_resolution.url %>"/>
+      </div>
+      <br>
+    </li>
+    <% } %>
+  </ul>
+</div>
+<div id="container" class="col-md-10">
+  <svg id="svg" width="1000" height="1000">
+    <rect width="1000" height="1000" fill="yellow"></rect>
+  </svg>
+</div>
+<div id="tools" class="col-md-4">
+  <br>
+  <div>
+    Width<br>
+    <input type="text" id="input-width" name="width" value="100" placeholder="width"><br>
+  </div>
+  <div>
+    Height<br>
+    <input type="text" id="input-height" name="height" value="100" placeholder="height"><br>
+  </div>
+  <div>
+    <button id="submit">process</button>
+  </div>
+</div>
+<div style="display:none;">
+  <br /><span id="message"></span><br />
+  <img src="" id="hidden"/>
+  <canvas id="canvas" width="640" height="640"></canvas>
+</div>
+<script src="../javascripts/HandleClickScript.js"></script>
+</body>
+</html>
+

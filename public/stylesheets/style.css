@@ -1,0 +1,22 @@
+#piclist {
+    border: solid 1px black;
+    height: 1010px;
+    width: 200px;
+    overflow: auto;
+}
+
+#container {
+    border: solid 1px black;
+    height: 1010px;
+    width: 1030px;
+}
+
+#tools {
+    border: solid 1px black;
+    height: 1010px;
+    width: 200px;
+}
+
+.selected {
+    background-color: yellow;
+}
